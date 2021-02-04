@@ -21,6 +21,7 @@ class _AddViewState extends State<AddView> {
   Widget build(BuildContext context) {
     return Material(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           DropdownButton(
             value: dropdownValue,
@@ -34,7 +35,7 @@ class _AddViewState extends State<AddView> {
                 value: value,
                 child: Text(value),
               );
-            }),
+            }).toList(),
           ),
           Container(
             width: MediaQuery.of(context).size.width / 1.3,
@@ -43,6 +44,21 @@ class _AddViewState extends State<AddView> {
               decoration: InputDecoration(
                 labelText: "Coin Amount",
               ),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width / 1.4,
+            height: 45,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0),
+              color: Colors.white,
+            ),
+            child: MaterialButton(
+              onPressed: () async {
+                //TODO;
+                Navigator.of(context).pop();
+              },
+              child: Text('Add'),
             ),
           ),
         ],
