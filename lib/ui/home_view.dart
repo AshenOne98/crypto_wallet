@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crypto_wallet/net/api_methods.dart';
+import 'package:crypto_wallet/net/flutterfire.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'add_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -97,8 +97,9 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         IconButton(
                           icon: Icon(Icons.close, color: Colors.red),
-                          onPressed: () {
-                            print('Test');
+                          onPressed: () async {
+                            await removeCoin(document.id);
+                            print('test');
                           },
                         ),
                       ],
